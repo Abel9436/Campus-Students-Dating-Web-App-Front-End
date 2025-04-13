@@ -1,0 +1,43 @@
+footer{
+    background: black;
+    color: white;
+}
+.footer{
+    display: flex;
+    justify-content: space-evenly;
+    padding:40px;
+    padding-bottom: 60px;
+}
+.footer a{
+    color: white;
+    
+}
+.footer .footer-1{
+    width: 200px;
+    display: grid;
+    gap: 20px;
+}
+.footer .footer-2{
+    width: 300px;
+    display: grid;
+    
+}
+.footer .footer-3{
+    width: 300px;
+}
+.footer .footer-4{
+    width: 300px;
+}
+footer .last{
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+}
+.footer .footer-4 .logo{
+    display: flex;
+    width: 100px;
+    height: 100px;
+    color: aliceblue;
+    gap: 10px;
+
+}

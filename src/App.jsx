@@ -1,14 +1,17 @@
 import React from "react";
-import Header from "./component/Header";
-import Body from "./component/Body";
-import Footer from "./component/Footer";
+
 import "./App.css"
+import Router from "./routes/Router";
+import LandingPage from "./pages/LandingPage/LandingPage";
+
 function App() {
   return (
     <div>
-      <Header/>
-      <Body/>
-      <Footer/>
+     
+<Router>
+
+<LandingPage/>
+</Router>
     </div>
   );
 }

@@ -93,7 +93,7 @@ gap: 210px;
     padding-left: 20px;
 }
 .third{
-    background: #f5f5f5;
+    background: #f1f1f1;
     padding-top: 50px;
     padding-bottom: 50px;
 }
@@ -153,7 +153,7 @@ gap: 210px;
     align-items: center;
 }
 .fourth .fourth-in{
-    margin-top: 20px;
+    margin-top: 40px;
     display: flex;
   justify-content: space-evenly;
   align-items: center;
@@ -211,5 +211,5 @@ gap: 210px;
     border: none;
     color: rgb(0, 136, 255);
     margin-left: 180px;
-    
+    background: white;
 }

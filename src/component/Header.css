@@ -19,3 +19,6 @@ header h2{
     color: white;
     border: none;
 }
+.access a{
+    color: red;
+}

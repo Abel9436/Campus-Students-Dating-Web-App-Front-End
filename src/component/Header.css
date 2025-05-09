@@ -1,0 +1,24 @@
+header{
+    display:flex;
+    padding: 10px;
+}
+header h2{
+    color: rgb(0, 170, 255);
+}
+.access{
+   margin-left: auto;
+   display: flex;
+   gap: 20px;
+   
+}
+.access button{
+    background: rgb(35, 160, 255);
+    border-radius: 20px;
+    height: 30px;
+    width: 80px;
+    color: white;
+    border: none;
+}
+.access a{
+    color: red;
+}

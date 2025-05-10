@@ -1,17 +1,19 @@
-header{
-    display:flex;
+header {
+    display: flex;
     padding: 10px;
 }
-header h2{
+
+header h2 {
     color: rgb(0, 170, 255);
 }
-.access{
-   margin-left: auto;
-   display: flex;
-   gap: 20px;
-   
+
+.access {
+    margin-left: auto;
+    display: flex;
+    gap: 20px;
 }
-.access button{
+
+.access button {
     background: rgb(35, 160, 255);
     border-radius: 20px;
     height: 30px;
@@ -19,6 +21,149 @@ header h2{
     color: white;
     border: none;
 }
-.access a{
+
+.access a {
     color: red;
+}
+
+
+/* Modern Responsive Navbar Styles */
+
+.navbar {
+    width: 100%;
+    background: #fff;
+    box-shadow: 0 2px 12px rgba(37, 99, 235, 0.06);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.navbar-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 64px;
+}
+
+.navbar-brand {
+    font-size: 1.7rem;
+    font-weight: 700;
+    color: #2563eb;
+    text-decoration: none;
+    letter-spacing: -1px;
+    transition: color 0.2s;
+}
+
+.navbar-brand:hover {
+    color: #174ea6;
+}
+
+.navbar-links {
+    display: flex;
+    align-items: center;
+    gap: 2.2rem;
+    transition: right 0.3s;
+}
+
+.navbar-link {
+    color: #334155;
+    font-size: 1.08rem;
+    font-weight: 500;
+    text-decoration: none;
+    transition: color 0.2s;
+    padding: 4px 0;
+    position: relative;
+}
+
+.navbar-link:hover,
+.navbar-link.active {
+    color: #2563eb;
+}
+
+.navbar-signin {
+    background: linear-gradient(90deg, #2563eb 60%, #38bdf8 100%);
+    color: #fff;
+    border-radius: 20px;
+    padding: 8px 28px;
+    font-weight: 600;
+    font-size: 1.08rem;
+    text-decoration: none;
+    margin-left: 1.2rem;
+    box-shadow: 0 2px 8px rgba(37, 99, 235, 0.08);
+    transition: background 0.2s, color 0.2s;
+    border: none;
+    cursor: pointer;
+    display: inline-block;
+}
+
+.navbar-signin:hover {
+    background: linear-gradient(90deg, #174ea6 60%, #2563eb 100%);
+    color: #fff;
+}
+
+
+/* Hamburger menu for mobile */
+
+.navbar-toggle {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 36px;
+    height: 36px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    margin-left: 1rem;
+}
+
+.navbar-toggle-bar {
+    width: 24px;
+    height: 3px;
+    background: #2563eb;
+    margin: 3px 0;
+    border-radius: 2px;
+    transition: all 0.3s;
+}
+
+@media (max-width: 900px) {
+    .navbar-container {
+        padding: 0 10px;
+    }
+    .navbar-links {
+        position: fixed;
+        top: 64px;
+        right: -100vw;
+        width: 220px;
+        height: calc(100vh - 64px);
+        background: #fff;
+        box-shadow: -2px 0 16px rgba(37, 99, 235, 0.08);
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1.5rem;
+        padding: 2rem 1.5rem;
+        z-index: 200;
+        transition: right 0.3s;
+    }
+    .navbar-links.open {
+        right: 0;
+    }
+    .navbar-toggle {
+        display: flex;
+    }
+}
+
+@media (max-width: 600px) {
+    .navbar-container {
+        height: 54px;
+    }
+    .navbar {
+        min-height: 54px;
+    }
+    .navbar-brand {
+        font-size: 1.2rem;
+    }
 }

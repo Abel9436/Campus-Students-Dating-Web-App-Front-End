@@ -1,17 +1,27 @@
 import "./Header.css";
-import Home  from "./Home";
 import { Link } from 'react-router-dom';
+import React, { useState } from 'react';
+
 function Header() {
+  const [menuOpen, setMenuOpen] = useState(false);
   return (
-    <header>
-       <h2>CampusConnect</h2>
-     <div className="access">
-        {/* <a href="C:\Users\hp\Campus-Students-Dating-Web-App-Front-End\src\component\Home.jsx">Home</a> */}
-        <p>Network</p>
-        <Link to="/home">Home</Link>
-        <button>Sign in</button>
-     </div>
-    </header>
+    <nav className="navbar">
+      <div className="navbar-container">
+        <Link to="/" className="navbar-brand">CampusConnect</Link>
+        <button className="navbar-toggle" onClick={() => setMenuOpen(!menuOpen)} aria-label="Toggle navigation">
+          <span className="navbar-toggle-bar"></span>
+          <span className="navbar-toggle-bar"></span>
+          <span className="navbar-toggle-bar"></span>
+        </button>
+        <div className={`navbar-links${menuOpen ? ' open' : ''}`}>
+          <Link to="/discover" className="navbar-link">Discover</Link>
+          <Link to="/messages" className="navbar-link">Messages</Link>
+          <Link to="/network" className="navbar-link">Network</Link>
+          <Link to="/home" className="navbar-link">Home</Link>
+          <Link to="/login" className="navbar-signin">Sign in</Link>
+        </div>
+      </div>
+    </nav>
   );
 }
 

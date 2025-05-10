@@ -1,6 +1,8 @@
 import React from 'react';
 import './Home.css';
-import tom from '../../public/tom.jpg'
+import tom from '../../public/tom.jpg';
+import Header from './Header';
+import { Link } from 'react-router-dom';
 
 const Sidebar = () => (
   <aside className="sidebar">
@@ -29,18 +31,6 @@ const Sidebar = () => (
   </aside>
 );
 
-const Header = () => (
-  <header className="main-header">
-    <h1>CampusConnect</h1>
-    <div className="header-icons">
-      <button className="icon-button">🔍</button>
-      <button className="icon-button">🔔</button>
-      <button className="icon-button">💬</button>
-      <img src={tom} className="avatar small" alt="User avatar" />
-    </div>
-  </header>
-);
-
 const ProfileCard = ({ name, age, distance, field, description }) => (
   <div className="card">
     <div className="card-img">
@@ -63,7 +53,6 @@ const ProfileCard = ({ name, age, distance, field, description }) => (
 
 const MainContent = () => (
   <main className="main-content">
-    <Header />
     <section className="welcome">
       <h2>Welcome back, Sarah! ✨</h2>
       <p>Ready to make meaningful connections today?</p>
@@ -83,9 +72,12 @@ const MainContent = () => (
 );
 
 const Home = () => (
-  <div className="layout">
-    <Sidebar />
-    <MainContent />
+  <div>
+    <Header />
+    <div className="layout">
+      <Sidebar />
+      <MainContent />
+    </div>
   </div>
 );
 

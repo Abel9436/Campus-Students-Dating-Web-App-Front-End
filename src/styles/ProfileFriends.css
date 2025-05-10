@@ -1,0 +1,116 @@
+/* ProfileFriends.css */
+.profile-friends {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.profile-friends-title {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #222b45;
+  margin-bottom: 2px;
+}
+
+.profile-friends-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px 10px;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.profile-friend-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 60px;
+  gap: 4px;
+}
+
+.profile-friend-avatar {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #e5e7ef;
+  background: #f3f4f6;
+  box-shadow: 0 1px 4px 0 rgba(16,30,54,0.07);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  color: #7b8194;
+}
+.profile-friend-avatar.more {
+  background: #e5e7ef;
+  color: #2563eb;
+  font-weight: 700;
+  font-size: 1.3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.profile-friend-name {
+  font-size: 0.95rem;
+  color: #374151;
+  text-align: center;
+  margin-top: 2px;
+  font-weight: 500;
+}
+
+.profile-friend-add-btn {
+  background: #2563eb;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 8px 22px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+  margin-left: 10px;
+  box-shadow: 0 1px 4px 0 rgba(16,30,54,0.07);
+}
+.profile-friend-add-btn:hover, .profile-friend-add-btn:focus {
+  background: #1d4ed8;
+}
+
+@media (max-width: 700px) {
+  .profile-friend-item {
+    width: 48px;
+  }
+  .profile-friend-avatar {
+    width: 36px;
+    height: 36px;
+    font-size: 1rem;
+  }
+  .profile-friend-name {
+    font-size: 0.85rem;
+  }
+}
+
+.profile-friends-suggestions-list .profile-friend-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 0;
+}
+.profile-friends-suggestions-list .profile-friend-avatar {
+  width: 36px;
+  height: 36px;
+}
+.profile-friends-suggestions-list .profile-friend-name {
+  font-size: 1rem;
+  margin: 0 8px 0 0;
+  min-width: 70px;
+}
+.profile-friends-suggestions-list .profile-friend-add-btn {
+  padding: 5px 14px;
+  font-size: 0.95rem;
+  border-radius: 7px;
+  margin-left: auto;
+  box-shadow: none;
+} 

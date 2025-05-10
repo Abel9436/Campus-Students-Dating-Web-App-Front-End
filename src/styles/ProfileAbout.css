@@ -1,0 +1,64 @@
+/* ProfileAbout.css */
+.profile-about {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.profile-about-title {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #222b45;
+  margin-bottom: 2px;
+}
+
+.profile-about-text {
+  font-size: 1rem;
+  color: #4b5563;
+  margin-bottom: 0;
+}
+
+.profile-about-interests {
+  margin-top: 8px;
+}
+
+.profile-about-interests-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #374151;
+  margin-bottom: 6px;
+}
+
+.profile-about-interests-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.profile-interest-tag {
+  display: inline-block;
+  font-size: 0.95rem;
+  padding: 4px 14px;
+  border-radius: 8px;
+  background: #f1f3fa;
+  color: #2563eb;
+  font-weight: 500;
+  margin-bottom: 4px;
+  transition: background 0.2s;
+}
+.profile-interest-tag.photo { color: #6366f1; background: #eef2ff; }
+.profile-interest-tag.chess { color: #059669; background: #ecfdf5; }
+.profile-interest-tag.gaming { color: #f43f5e; background: #fef2f2; }
+.profile-interest-tag.hiking { color: #f59e42; background: #fff7ed; }
+.profile-interest-tag.music { color: #a21caf; background: #f3e8ff; }
+
+@media (max-width: 700px) {
+  .profile-about-title {
+    font-size: 1.1rem;
+  }
+  .profile-about-interests-title {
+    font-size: 1rem;
+  }
+  .profile-interest-tag {
+    font-size: 0.9rem;
+ 

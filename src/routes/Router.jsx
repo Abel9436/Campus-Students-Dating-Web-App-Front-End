@@ -8,6 +8,7 @@ import ForgotPassword from '../pages/Auth/ForgotPassword'
 import VerifyEmail from '../pages/Auth/VerifyEmail'
 import VerificationSuccess from '../pages/Auth/VerificationSuccess'
 import Chat from '../pages/Chat'
+import Profile from '../pages/Profile'
 
 function Router() {
   return (
@@ -21,6 +22,7 @@ function Router() {
     <Route path="/verify-email" element={<VerifyEmail/>} />
     <Route path="/verification-success" element={<VerificationSuccess/>} />
     <Route path="/chat" element={<Chat/>} />
+    <Route path="/profile" element={<Profile/>} />
   </Routes>
 </div>
   )

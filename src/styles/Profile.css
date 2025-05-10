@@ -1,0 +1,60 @@
+/* Profile.css */
+.profile-page {
+  width: 100%;
+  min-height: 100vh;
+  background: #f6f7fb;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 32px 0 64px 0;
+  font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
+}
+
+.profile-header-section {
+  width: 90vw;
+  max-width: 900px;
+  margin-bottom: 24px;
+}
+
+.profile-main-content {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  width: 90vw;
+  max-width: 900px;
+  margin-bottom: 24px;
+}
+
+@media (min-width: 900px) {
+  .profile-main-content {
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 24px;
+  }
+  .profile-about-section {
+    flex: 2;
+  }
+  .profile-friends-section {
+    flex: 1;
+    min-width: 220px;
+    max-width: 260px;
+  }
+}
+
+.profile-about-section,
+.profile-friends-section {
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 2px 12px 0 rgba(16,30,54,0.08);
+  padding: 24px 28px;
+}
+
+.profile-activity-section {
+  width: 90vw;
+  max-width: 900px;
+  margin-top: 0;
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 2px 12px 0 rgba(16,30,54,0.08);
+  padding: 24px 28px;
+} 

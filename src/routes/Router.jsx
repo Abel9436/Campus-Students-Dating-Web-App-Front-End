@@ -8,8 +8,10 @@ import ForgotPassword from '../pages/Auth/ForgotPassword'
 import VerifyEmail from '../pages/Auth/VerifyEmail'
 import VerificationSuccess from '../pages/Auth/VerificationSuccess'
 import Chat from '../pages/Chat'
+import Profile from '../pages/Profile'
 import authService from '../services/authService'
 
+// Private route wrapper
 const PrivateRoute = ({ children }) => {
     const user = authService.getCurrentUser();
     return user ? children : <Navigate to="/login" />;
@@ -32,6 +34,11 @@ function Router() {
             <Route path="/chat" element={
                 <PrivateRoute>
                     <Chat />
+                </PrivateRoute>
+            } />
+            <Route path="/profile" element={
+                <PrivateRoute>
+                    <Profile />
                 </PrivateRoute>
             } />
         </Routes>

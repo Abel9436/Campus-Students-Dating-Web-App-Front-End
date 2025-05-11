@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import './Auth.css';
 import Header from '../../component/Header';
+import { useNavigate } from 'react-router-dom';
+import authService from '../../services/authService';
 
 const Login = () => {
   const [form, setForm] = useState({
@@ -8,6 +10,9 @@ const Login = () => {
     password: '',
     remember: false,
   });
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState('');
+  const navigate = useNavigate();
 
   const handleChange = (e) => {
     const { name, value, type, checked } = e.target;
@@ -15,6 +20,20 @@ const Login = () => {
       ...prev,
       [name]: type === 'checkbox' ? checked : value,
     }));
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setLoading(true);
+    setError('');
+    try {
+      await authService.login(form.email, form.password);
+      navigate('/home');
+    } catch (err) {
+      setError(err.response?.data?.detail || 'Login failed. Please check your credentials.');
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -28,7 +47,7 @@ const Login = () => {
               <h2 style={{margin:0}}>Welcome back!</h2>
             </div>
             <p>Log in to your Campus Circle account</p>
-            <form className="auth-form">
+            <form className="auth-form" onSubmit={handleSubmit}>
               <div>
                 <label>Email address</label>
                 <input name="email" value={form.email} onChange={handleChange} type="email" placeholder="Email address" />
@@ -42,9 +61,10 @@ const Login = () => {
                   <input name="remember" type="checkbox" checked={form.remember} onChange={handleChange} />
                   Remember me
                 </label>
-                <a href="#" className="terms-link">Forgot password?</a>
+                <a href="/forgot-password" className="terms-link">Forgot password?</a>
               </div>
-              <button type="submit" className="submit-btn">Log in</button>
+              {error && <div className="auth-error">{error}</div>}
+              <button type="submit" className="submit-btn" disabled={loading}>{loading ? 'Logging in...' : 'Log in'}</button>
             </form>
             <div className="auth-divider">
               <div className="line" />
@@ -52,8 +72,8 @@ const Login = () => {
               <div className="line" />
             </div>
             <div className="auth-social" style={{flexDirection:'column',gap:'0.7rem'}}>
-              <button><img src="/google.svg" alt="Google" style={{width:'20px',height:'20px'}} /> Continue with Google</button>
-              <button><img src="/microsoft.svg" alt="Microsoft" style={{width:'20px',height:'20px'}} /> Continue with Microsoft</button>
+              <button type="button"><img src="/google.svg" alt="Google" style={{width:'20px',height:'20px'}} /> Continue with Google</button>
+              <button type="button"><img src="/microsoft.svg" alt="Microsoft" style={{width:'20px',height:'20px'}} /> Continue with Microsoft</button>
             </div>
           </div>
           <div className="auth-illustration">

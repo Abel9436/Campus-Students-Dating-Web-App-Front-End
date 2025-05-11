@@ -1,8 +1,19 @@
 import React from 'react';
 import './Auth.css';
 import Header from '../../component/Header';
+import { useNavigate } from 'react-router-dom';
 
 const VerificationSuccess = () => {
+  const navigate = useNavigate();
+
+  const handleGoToDashboard = () => {
+    navigate('/home');
+  };
+
+  const handleSetupProfile = () => {
+    navigate('/profile/setup');
+  };
+
   return (
     <div className="auth-container">
       <Header />
@@ -15,10 +26,24 @@ const VerificationSuccess = () => {
               </span>
             </div>
             <h2 style={{textAlign:'center',marginBottom:'0.5rem'}}>Verification Successful!</h2>
-            <p style={{textAlign:'center',marginBottom:'1.5rem',color:'#64748b',fontSize:'1rem'}}>Your account has been verified. Welcome to EduPortal – your gateway to academic excellence!</p>
+            <p style={{textAlign:'center',marginBottom:'1.5rem',color:'#64748b',fontSize:'1rem'}}>
+              Your account has been verified. Welcome to Campus Circle – your gateway to campus connections!
+            </p>
             <div style={{display:'flex',flexDirection:'column',gap:'0.7rem',marginBottom:'1.2rem'}}>
-              <button className="submit-btn" style={{width:'100%'}}>Go to Dashboard &rarr;</button>
-              <button className="submit-btn" style={{width:'100%',background:'#fff',color:'#2563eb',border:'1.5px solid #2563eb'}}>Set Up Your Profile</button>
+              <button 
+                onClick={handleGoToDashboard} 
+                className="submit-btn" 
+                style={{width:'100%'}}
+              >
+                Go to Dashboard &rarr;
+              </button>
+              <button 
+                onClick={handleSetupProfile} 
+                className="submit-btn" 
+                style={{width:'100%',background:'#fff',color:'#2563eb',border:'1.5px solid #2563eb'}}
+              >
+                Set Up Your Profile
+              </button>
             </div>
             <div style={{textAlign:'center',fontSize:'0.97rem',color:'#64748b'}}>
               Didn't expect this verification? <a href="#" className="terms-link">Contact Support</a>
